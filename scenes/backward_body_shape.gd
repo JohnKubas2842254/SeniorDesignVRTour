@@ -1,4 +1,4 @@
-extends Area3D  # Make sure this is at the top!
+extends Area3D
 
 @export var next_scene_path: String  # Set in Inspector, theres an empty "next scene field" to be filled
 var input_disabled: bool = false  # Declare the variable properly

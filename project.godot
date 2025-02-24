@@ -24,3 +24,7 @@ CameraState="*res://camera_state.gd"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
