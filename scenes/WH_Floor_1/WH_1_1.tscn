@@ -18,5 +18,11 @@ sky = SubResource("Sky_pc0w5")
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_1/WH_1_2.tscn"
 
+[node name="backwards marker" parent="Node3D" index="3"]
+visible = false
+
+[node name="forward marker" parent="Node3D" index="4"]
+visible = false
+
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource("Environment_fi2e1")

@@ -18,8 +18,11 @@ sky = SubResource("Sky_rqsa5")
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_1/WH_1_6.tscn"
 
-[node name="right marker" parent="Node3D" index="5"]
-visible = true
+[node name="backwards marker" parent="Node3D" index="3"]
+visible = false
+
+[node name="forward marker" parent="Node3D" index="4"]
+visible = false
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_1/WH_1_4.tscn"
