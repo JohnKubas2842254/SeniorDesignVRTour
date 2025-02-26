@@ -51,14 +51,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_k6iq1")
 
 [node name="leftbodyShape" type="Area3D" parent="Node3D/left marker"]
 script = ExtResource("5_u7f5h")
-next_scene_path = "res://scenes/WH_Floor_0/WH_0_2.tscn"
+next_scene_path = "res://scenes/WH_Floor_1/WH_1_7.tscn"
 
 [node name="leftCollisionShape" type="CollisionShape3D" parent="Node3D/left marker/leftbodyShape"]
 shape = SubResource("CylinderShape3D_3hbyj")
 
 [node name="backwards marker" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 4, -1, 0)
-visible = false
 material_override = SubResource("StandardMaterial3D_jgcq5")
 mesh = SubResource("CylinderMesh_ngnbe")
 
@@ -70,7 +69,6 @@ shape = SubResource("CylinderShape3D_3hbyj")
 
 [node name="forward marker" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -4, -1, 0)
-visible = false
 material_override = SubResource("StandardMaterial3D_jgcq5")
 mesh = SubResource("CylinderMesh_ngnbe")
 
@@ -82,12 +80,12 @@ shape = SubResource("CylinderShape3D_pml42")
 
 [node name="right marker" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, -1, -4)
-visible = false
 material_override = SubResource("StandardMaterial3D_jgcq5")
 mesh = SubResource("CylinderMesh_ngnbe")
 
 [node name="rightbodyShape" type="Area3D" parent="Node3D/right marker"]
 script = ExtResource("8_5e4yq")
+next_scene_path = "res://scenes/WH_Floor_1/WH_1_7.tscn"
 
 [node name="rightCollisionShape" type="CollisionShape3D" parent="Node3D/right marker/rightbodyShape"]
 shape = SubResource("CylinderShape3D_0ouji")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://k6omdse0o32o"]
+
+[ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_dot1r"]
+[ext_resource type="Texture2D" uid="uid://ck4pjhtax6r3j" path="res://panoramics/WH_1/WH_1_4.jpg" id="2_k1tef"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vof01"]
+panorama = ExtResource("2_k1tef")
+
+[sub_resource type="Sky" id="Sky_5p64s"]
+sky_material = SubResource("PanoramaSkyMaterial_vof01")
+
+[sub_resource type="Environment" id="Environment_3emu7"]
+background_mode = 2
+sky = SubResource("Sky_5p64s")
+
+[node name="main" instance=ExtResource("1_dot1r")]
+
+[node name="leftbodyShape" parent="Node3D/left marker" index="0"]
+next_scene_path = "res://scenes/WH_Floor_1/WH_1_5.tscn"
+
+[node name="right marker" parent="Node3D" index="5"]
+visible = true
+
+[node name="rightbodyShape" parent="Node3D/right marker" index="0"]
+next_scene_path = "res://scenes/WH_Floor_1/WH_1_3.tscn"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
+environment = SubResource("Environment_3emu7")

@@ -11,7 +11,7 @@ func _ready():
 
 # Function to change to Scene 1 when Button1 is pressed
 func _on_Button_pressed():
-	get_tree().change_scene_to_file("res://scenes/WH_Floor_0/WH_0_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/WH_Floor_1/WH_1_1.tscn")
 
 # Function to change to Scene 2 when Button2 is pressed
 func _on_Button2_pressed():
