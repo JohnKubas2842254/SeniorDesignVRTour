@@ -1,5 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dymumd1uxc6je"]
+[gd_scene load_steps=6 format=3 uid="uid://dymumd1uxc6je"]
 
 [ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_enfa5"]
+[ext_resource type="Texture2D" uid="uid://ccw8xbuchbd8n" path="res://panoramics/WH_0/IMG_20250219_113741_00_095.jpg" id="2_ixqtj"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_572tr"]
+panorama = ExtResource("2_ixqtj")
+
+[sub_resource type="Sky" id="Sky_pcywf"]
+sky_material = SubResource("PanoramaSkyMaterial_572tr")
+
+[sub_resource type="Environment" id="Environment_onv1o"]
+background_mode = 2
+sky = SubResource("Sky_pcywf")
 
 [node name="main" instance=ExtResource("1_enfa5")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" index="0"]
+environment = SubResource("Environment_onv1o")

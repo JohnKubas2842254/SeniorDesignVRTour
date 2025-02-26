@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkgw2lscy0ukr"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_pks2e"]
+[ext_resource type="FontFile" path="res://fonts/xolonium/Xolonium.tres" id="2_jkbl2"]
+[ext_resource type="Texture2D" uid="uid://bemx8dl3tnfsh" path="res://cleveland-state-university.png" id="2_smb8y"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pks2e")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_top = 6.0
+offset_right = 1920.0
+offset_bottom = 1086.0
+texture = ExtResource("2_smb8y")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 240.0
+theme_override_fonts/normal_font = ExtResource("2_jkbl2")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[center]Cleveland State Virtual Reality Campus Tour"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_direction = 1
+layout_mode = 0
+offset_top = 240.0
+offset_right = 1920.0
+offset_bottom = 1100.0
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(540, 100)
+layout_direction = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jkbl2")
+theme_override_font_sizes/font_size = 48
+text = "Engineering Building"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(540, 100)
+layout_direction = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jkbl2")
+theme_override_font_sizes/font_size = 48
+text = "Engineering Building"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(540, 100)
+layout_direction = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jkbl2")
+theme_override_font_sizes/font_size = 48
+text = "Engineering Building"
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(540, 100)
+layout_direction = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jkbl2")
+theme_override_font_sizes/font_size = 48
+text = "Engineering Building"
+
+[node name="Button5" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(540, 100)
+layout_direction = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jkbl2")
+theme_override_font_sizes/font_size = 48
+text = "Engineering Building"
+
+[node name="Button6" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(540, 100)
+layout_direction = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jkbl2")
+theme_override_font_sizes/font_size = 48
+text = "Engineering Building"
