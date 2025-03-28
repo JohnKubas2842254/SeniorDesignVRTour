@@ -7,7 +7,6 @@ func _ready():
 	$VBoxContainer/Button3.pressed.connect(_on_Button3_pressed)
 	$VBoxContainer/Button4.pressed.connect(_on_Button4_pressed)
 	$VBoxContainer/Button5.pressed.connect(_on_Button5_pressed)
-	$VBoxContainer/Button6.pressed.connect(_on_Button6_pressed)
 
 # Function to change to Scene 1 when Button1 is pressed
 func _on_Button_pressed():
