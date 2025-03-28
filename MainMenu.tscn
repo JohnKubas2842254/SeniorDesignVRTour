@@ -43,7 +43,7 @@ layout_direction = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jkbl2")
 theme_override_font_sizes/font_size = 48
-text = "Engineering Building"
+text = "Washewicz Hall"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(540, 100)
@@ -51,7 +51,7 @@ layout_direction = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jkbl2")
 theme_override_font_sizes/font_size = 48
-text = "Engineering Building"
+text = "Fenn Hall"
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(540, 100)
@@ -59,7 +59,7 @@ layout_direction = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jkbl2")
 theme_override_font_sizes/font_size = 48
-text = "Engineering Building"
+text = "Science Building"
 
 [node name="Button4" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(540, 100)
@@ -67,7 +67,7 @@ layout_direction = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jkbl2")
 theme_override_font_sizes/font_size = 48
-text = "Engineering Building"
+text = "Berkman Hall"
 
 [node name="Button5" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(540, 100)
@@ -75,12 +75,4 @@ layout_direction = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jkbl2")
 theme_override_font_sizes/font_size = 48
-text = "Engineering Building"
-
-[node name="Button6" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(540, 100)
-layout_direction = 1
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_jkbl2")
-theme_override_font_sizes/font_size = 48
-text = "Engineering Building"
+text = "Student Center"
