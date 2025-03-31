@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bto20s4cm0q0f"]
+[gd_scene load_steps=6 format=3 uid="uid://cjgj2by1omuwr"]
 
-[ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_c06kk"]
-[ext_resource type="Texture2D" uid="uid://ddemfaenar78e" path="res://panoramics/WH_4/WH_4_8.jpg" id="2_hl0du"]
+[ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_1iuyk"]
+[ext_resource type="Texture2D" uid="uid://drb5xmvxcynhk" path="res://panoramics/WH_4/WH_4_12.jpg" id="2_g4q23"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0rdip"]
-panorama = ExtResource("2_hl0du")
+panorama = ExtResource("2_g4q23")
 
 [sub_resource type="Sky" id="Sky_p47ax"]
 sky_material = SubResource("PanoramaSkyMaterial_0rdip")
@@ -13,23 +13,26 @@ sky_material = SubResource("PanoramaSkyMaterial_0rdip")
 background_mode = 2
 sky = SubResource("Sky_p47ax")
 
-[node name="main" instance=ExtResource("1_c06kk")]
+[node name="main" instance=ExtResource("1_1iuyk")]
 
 [node name="left marker" parent="Node3D" index="2"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, -1, 2.5952)
+visible = false
 
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_4/WH_4_9.tscn"
 
 [node name="backwards marker" parent="Node3D" index="3"]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 4, -1, -0.460047)
-visible = false
+transform = Transform3D(0.75, 0, 0, 0, 0.075, 0, 0, 0, 0.75, 2.11475, -1, -0.460047)
 
 [node name="backwardBodyShape" parent="Node3D/backwards marker" index="0"]
-next_scene_path = "res://scenes/WH_Floor_4/WH_4_0.tscn"
+next_scene_path = "res://scenes/WH_Floor_4/WH_4_8.tscn"
 
 [node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
-next_scene_path = "res://scenes/WH_Floor_4/WH_4_12.tscn"
+next_scene_path = "res://scenes/WH_Floor_4/WH_4_13.tscn"
+
+[node name="right marker" parent="Node3D" index="5"]
+visible = false
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_4/WH_4_7.tscn"
