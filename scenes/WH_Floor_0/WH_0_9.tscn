@@ -19,20 +19,20 @@ sky_rotation = Vector3(0, -1.5708, 0)
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="Node3D" index="0"]
 environment = SubResource("Environment_dn4ic")
 
+[node name="left marker" parent="Node3D" index="3"]
+visible = false
+
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = ""
 
-[node name="backwards marker" parent="Node3D" index="5"]
-visible = true
-
-[node name="forward marker" parent="Node3D" index="6"]
-visible = true
+[node name="backwards marker" parent="Node3D" index="4"]
+visible = false
 
 [node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
-next_scene_path = "res://scenes/WH_Floor_0/WH_0_8.tscn"
+next_scene_path = "res://scenes/WH_Floor_1/WH_1_23.tscn"
 
-[node name="right marker" parent="Node3D" index="7"]
-visible = true
+[node name="right marker" parent="Node3D" index="6"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.628894, -1, -4)
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_0/WH_0_8.tscn"

@@ -17,3 +17,12 @@ sky = SubResource("Sky_pcywf")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" index="0"]
 environment = SubResource("Environment_onv1o")
+
+[node name="backwards marker" parent="Node3D" index="4"]
+visible = false
+
+[node name="forward marker" parent="Node3D" index="5"]
+visible = false
+
+[node name="right marker" parent="Node3D" index="6"]
+visible = false

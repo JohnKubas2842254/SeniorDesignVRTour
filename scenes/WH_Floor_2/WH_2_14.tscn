@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfo4j3e4sbojw"]
+
+[ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_3rcuf"]
+[ext_resource type="Texture2D" uid="uid://dmiufr8uhwrpv" path="res://panoramics/WH_2/WH_2_14.jpg" id="2_1vhmh"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0rdip"]
+panorama = ExtResource("2_1vhmh")
+
+[sub_resource type="Sky" id="Sky_p47ax"]
+sky_material = SubResource("PanoramaSkyMaterial_0rdip")
+
+[sub_resource type="Environment" id="Environment_st023"]
+background_mode = 2
+sky = SubResource("Sky_p47ax")
+
+[node name="main" instance=ExtResource("1_3rcuf")]
+
+[node name="left marker" parent="Node3D" index="2"]
+visible = false
+
+[node name="leftbodyShape" parent="Node3D/left marker" index="0"]
+next_scene_path = "res://scenes/WH_Floor_2/WH_2_11.tscn"
+
+[node name="backwardBodyShape" parent="Node3D/backwards marker" index="0"]
+next_scene_path = "res://scenes/WH_Floor_2/WH_2_10.tscn"
+
+[node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
+next_scene_path = "res://scenes/WH_Floor_2/WH_2_15.tscn"
+
+[node name="right marker" parent="Node3D" index="5"]
+visible = false
+
+[node name="rightbodyShape" parent="Node3D/right marker" index="0"]
+next_scene_path = "res://scenes/WH_Floor_2/WH_2_9.tscn"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
+environment = SubResource("Environment_st023")
