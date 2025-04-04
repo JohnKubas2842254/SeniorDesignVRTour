@@ -21,6 +21,9 @@ visible = false
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_2/WH_2_11.tscn"
 
+[node name="backwards marker" parent="Node3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 2.79875, -1, 0)
+
 [node name="backwardBodyShape" parent="Node3D/backwards marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_2/WH_2_10.tscn"
 
