@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dr3estx0jyxye"]
+
+[ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_5ecrv"]
+[ext_resource type="Texture2D" uid="uid://bchqwmi8vbnjx" path="res://panoramics/FH_1/FH_1_7.jpg" id="2_5ecrv"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jgutg"]
+panorama = ExtResource("2_5ecrv")
+
+[sub_resource type="Sky" id="Sky_pc0w5"]
+sky_material = SubResource("PanoramaSkyMaterial_jgutg")
+
+[sub_resource type="Environment" id="Environment_fi2e1"]
+background_mode = 2
+sky = SubResource("Sky_pc0w5")
+
+[node name="main" instance=ExtResource("1_5ecrv")]
+
+[node name="left marker" parent="Node3D" index="2"]
+visible = false
+
+[node name="leftbodyShape" parent="Node3D/left marker" index="0"]
+next_scene_path = "res://scenes/FH_Floor_1/FH_1_5.tscn"
+
+[node name="backwardBodyShape" parent="Node3D/backwards marker" index="0"]
+next_scene_path = "res://scenes/FH_Floor_1/FH_1_6.tscn"
+
+[node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
+next_scene_path = "res://scenes/FH_Floor_1/FH_1_8.tscn"
+
+[node name="right marker" parent="Node3D" index="5"]
+visible = false
+
+[node name="rightbodyShape" parent="Node3D/right marker" index="0"]
+next_scene_path = "res://scenes/FH_Floor_1/FH_1_3.tscn"
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="." index="1"]
+environment = SubResource("Environment_fi2e1")
