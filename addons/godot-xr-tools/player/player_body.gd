@@ -19,7 +19,6 @@ extends CharacterBody3D
 ## After the player body moves, the [XROrigin3D] is updated as necessary to
 ## track the players movement.
 
-
 ## Signal emitted when the player jumps
 signal player_jumped()
 
@@ -313,9 +312,9 @@ func _physics_process(delta: float):
 		if on_ground and ground_physics.stop_on_slope and ground_angle < ground_physics.move_max_slope:
 			# Apply gravity towards slope to prevent sliding
 			velocity += -ground_vector * gravity.length() * delta
-		else:
+		#else:
 			# Apply gravity
-			velocity += gravity * delta
+			#velocity += gravity * delta
 		_apply_velocity_and_control(delta)
 
 	# Apply the player-body movement to the XR origin
@@ -387,7 +386,7 @@ func move_body(p_velocity: Vector3) -> Vector3:
 			var obj = with.get_collider()
 
 			if obj.is_class("RigidBody3D"):
-				var rb : RigidBody3D = obj
+				var rb : RigidBody3D = obj				
 
 				# Get our relative impact velocity
 				var impact_velocity = p_velocity - rb.linear_velocity

@@ -15,6 +15,9 @@ sky = SubResource("Sky_p47ax")
 
 [node name="main" instance=ExtResource("1_wmlgj")]
 
+[node name="OmniLight3D" parent="Node3D" index="0"]
+visible = true
+
 [node name="left marker" parent="Node3D" index="2"]
 visible = false
 
@@ -35,3 +38,9 @@ next_scene_path = "res://scenes/WH_Floor_2/WH_2_9.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource("Environment_st023")
+
+[node name="XRCamera3D" parent="XROrigin3D" index="0"]
+fov = 179.0
+
+[node name="PlayerBody" parent="XROrigin3D" index="3"]
+enabled = false
