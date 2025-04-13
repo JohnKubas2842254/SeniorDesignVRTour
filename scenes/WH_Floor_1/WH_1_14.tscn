@@ -21,10 +21,13 @@ visible = false
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_1/WH_1_13.tscn"
 
+[node name="backwardBodyShape" parent="Node3D/backwards marker" index="0"]
+next_scene_path = "res://scenes/WH_Floor_1/WH_1_15.tscn"
+
 [node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_1/WH_1_13.tscn"
 
-[node name="right marker" parent="Node3D" index="5"]
+[node name="right marker" parent="Node3D" index="8"]
 visible = false
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
