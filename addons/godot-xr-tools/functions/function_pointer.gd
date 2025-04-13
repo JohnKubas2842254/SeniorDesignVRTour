@@ -3,7 +3,13 @@
 class_name XRToolsFunctionPointer
 extends Node3D
 
+# Variable to track if the hand is active
+var is_active: bool = true
 
+# Function to enable or disable the hand
+func set_active(active: bool):
+	is_active = active
+	visible = active  # Toggle visibility
 ## XR Tools Function Pointer Script
 ##
 ## This script implements a pointer function for a players controller. Pointer

@@ -3,7 +3,13 @@
 class_name XRToolsHand
 extends Node3D
 
+# Variable to track if the hand is active
+var is_active: bool = true
 
+# Function to enable or disable the hand
+func set_active(active: bool):
+	is_active = active
+	visible = active  # Toggle visibility
 ## XR Tools Hand Script
 ##
 ## This script manages a godot-xr-tools hand. It animates the hand blending

@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
 XRToolsRumbleManager="*res://addons/godot-xr-tools/rumble/rumble_manager.gd"
 CameraState="*res://camera_state.gd"
+VrState="*res://vr_state.gd"
+Global="*res://Global.gd"
 
 [editor_plugins]
 
