@@ -132,19 +132,28 @@ tracker = &"right_hand"
 turn_mode = 2
 
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("12_kylcc")]
+visible = false
 collision_layer = 16777215
 collision_mask = 16777215
 
 [node name="floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+visible = false
 collision_layer = 16777215
 collision_mask = 16777215
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+visible = false
 transparency = 1.0
 mesh = SubResource("QuadMesh_lyk5y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
 transform = Transform3D(1.00001, 0, 0, 0, 1.00001, 0, 0, 0, 1.00001, 0, 0, 0)
+visible = false
 shape = SubResource("BoxShape3D_dpcp7")
+
+[connection signal="area_entered" from="Node3D/left marker/leftbodyShape" to="." method="_on_leftbody_shape_area_entered"]
+[connection signal="area_entered" from="Node3D/backwards marker/backwardBodyShape" to="." method="_on_backward_body_shape_area_entered"]
+[connection signal="area_entered" from="Node3D/forward marker/forwardbodyShape" to="." method="_on_forwardbody_shape_area_entered"]
+[connection signal="area_entered" from="Node3D/right marker/rightbodyShape" to="." method="_on_rightbody_shape_area_entered"]

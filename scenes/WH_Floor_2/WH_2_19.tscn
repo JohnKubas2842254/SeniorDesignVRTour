@@ -35,3 +35,6 @@ next_scene_path = "res://scenes/WH_Floor_2/WH_2_16.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource("Environment_st023")
+
+[node name="PlayerBody" parent="XROrigin3D" index="3"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)

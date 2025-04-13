@@ -20,3 +20,19 @@ func _ready():
 func transition_to_scene(scene_path: String):
 	if scene_path:
 		get_tree().change_scene_to_file(scene_path)
+
+
+func _on_leftbody_shape_area_entered(area: Area3D) -> void:
+	pass # Replace with function body.
+
+
+func _on_backward_body_shape_area_entered(area: Area3D) -> void:
+	pass # Replace with function body.
+
+
+func _on_forwardbody_shape_area_entered(area: Area3D) -> void:
+	pass # Replace with function body.
+
+
+func _on_rightbody_shape_area_entered(area: Area3D) -> void:
+	pass # Replace with function body.
