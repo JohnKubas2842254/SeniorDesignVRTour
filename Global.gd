@@ -1,6 +1,16 @@
 extends Node
 
-var is_vr_enabled: bool = false
+var vr_enabled: bool = false
+
+# Check if VR is active
+func is_vr_enabled() -> bool:
+	print("Checking VR state: vr_enabled =", vr_enabled)
+	return vr_enabled
+
+# Set VR state (called when headset is detected or manually toggled)
+func set_vr_enabled(state: bool):
+	vr_enabled = state
+	print("VR state set to:", vr_enabled)
 
 func pre_hide_xr_nodes():
 	# Access XR-related nodes globally

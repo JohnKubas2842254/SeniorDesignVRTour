@@ -2,12 +2,20 @@ extends Node3D
 
 func _ready():
 	print("_ready initialized.")
+
+	# Check VR state and enable XR if necessary
+	if Global.is_vr_enabled():  # Use the Global singleton to check if VR is active
+		print("Initializing in XR mode...")
+		get_viewport().use_xr = true
+	else:
+		print("Initializing in 3D mode (non-XR)...")
+	
 	Global.pre_hide_xr_nodes()  # Use the singleton to manage XR nodes
 	
-	# Add a small delay to allow the scene to initialize before enabling XR
+	# Add a small delay to allow the scene to initialize before enabling VR
 	await get_tree().create_timer(1.0).timeout  # Wait for one frame
 
-	# Use the VR singleton to initialize VR
+	# Initialize VR (if applicable)
 	VrState.initialize_vr()
 	
 	# Update the behavior of XR-related nodes based on VR state
@@ -16,7 +24,6 @@ func _ready():
 func transition_to_scene(scene_path: String):
 	if scene_path:
 		# Pre-hide XR-related nodes BEFORE switching scenes
-		#pre_hide_xr_nodes()
 		print("Pre-hide XR nodes completed. Changing scene...")
 		# Perform the scene change
 		get_tree().change_scene_to_file(scene_path)

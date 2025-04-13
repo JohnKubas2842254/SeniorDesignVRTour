@@ -70,6 +70,7 @@ script = ExtResource("5_u7f5h")
 next_scene_path = "res://scenes/WH_Floor_1/WH_1_7.tscn"
 
 [node name="leftCollisionShape" type="CollisionShape3D" parent="Node3D/left marker/leftbodyShape"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CylinderShape3D_3hbyj")
 
 [node name="BackMarkerOmniLight3D" type="OmniLight3D" parent="Node3D"]
@@ -87,6 +88,7 @@ mesh = SubResource("CylinderMesh_ngnbe")
 script = ExtResource("6_rivjo")
 
 [node name="backwardCollisionShape" type="CollisionShape3D" parent="Node3D/backwards marker/backwardBodyShape"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CylinderShape3D_3hbyj")
 
 [node name="ForwardMarkerOmniLight3D" type="OmniLight3D" parent="Node3D"]
@@ -104,6 +106,7 @@ mesh = SubResource("CylinderMesh_ngnbe")
 script = ExtResource("7_8425o")
 
 [node name="forwardCollisionShape" type="CollisionShape3D" parent="Node3D/forward marker/forwardbodyShape"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CylinderShape3D_pml42")
 
 [node name="RightMarkerOmniLight3D" type="OmniLight3D" parent="Node3D"]
@@ -122,6 +125,7 @@ script = ExtResource("8_5e4yq")
 next_scene_path = "res://scenes/WH_Floor_1/WH_1_7.tscn"
 
 [node name="rightCollisionShape" type="CollisionShape3D" parent="Node3D/right marker/rightbodyShape"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CylinderShape3D_0ouji")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
