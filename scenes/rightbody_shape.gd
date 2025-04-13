@@ -7,11 +7,15 @@ var input_disabled: bool = false  # Declare the variable properly
 func _input_event(_camera, event, _position, _normal, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		handle_scene_transition()
-
 # NEW: Called when a laser pointer interacts with the marker
-func _on_Marker_body_entered(body):
-	if body.name.contains("Pointer"):  # Ensure it's a laser pointer
-		print("Laser pointer detected on marker:", name)
+func _on_marker_body_entered(body):
+	if body.name.contains("Pointer") and not input_disabled:
+		input_disabled = true  # Block further input to prevent multiple triggers
+		print("Switching scene to:", next_scene_path)  # Debugging output
+		if next_scene_path and next_scene_path != "":
+			get_tree().change_scene_to_file(next_scene_path)
+		else:
+			print("No valid next_scene_path set for marker:", name)
 
 # Function to handle transitioning to the next scene
 func handle_scene_transition():

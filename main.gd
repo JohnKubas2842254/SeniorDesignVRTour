@@ -1,6 +1,9 @@
 extends Node3D
 
 func _ready():
+	#await get_tree().create_timer(0.00001).timeout  # Add a delay
+	$XROrigin3D/RightHandController/FunctionPointer.enabled = true
+	
 	print("_ready initialized.")
 
 	# Check VR state and enable XR if necessary

@@ -33,6 +33,9 @@ next_scene_path = "res://scenes/WH_Floor_2/WH_2_18.tscn"
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_2/WH_2_16.tscn"
 
+[node name="rightCollisionShape" parent="Node3D/right marker/rightbodyShape" index="0"]
+visible = false
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource("Environment_st023")
 
