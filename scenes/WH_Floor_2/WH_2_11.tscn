@@ -28,7 +28,7 @@ next_scene_path = "res://scenes/WH_Floor_2/WH_2_12.tscn"
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -4, -1, 1.81463)
 
 [node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
-next_scene_path = "res://scenes/WH_Floor_2/WH_2_11.tscn"
+next_scene_path = "res://scenes/WH_Floor_3/WH_3_17.tscn"
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_2/WH_2_10.tscn"

@@ -3,7 +3,13 @@
 class_name XRToolsFunctionPointer
 extends Node3D
 
+# Variable to track if the hand is active
+var is_active: bool = true
 
+# Function to enable or disable the hand
+func set_active(active: bool):
+	is_active = active
+	visible = active  # Toggle visibility
 ## XR Tools Function Pointer Script
 ##
 ## This script implements a pointer function for a players controller. Pointer
@@ -179,6 +185,9 @@ func _ready():
 
 # Called on each frame to update the pickup
 func _process(_delta):
+	
+	if $RayCast.is_colliding():
+		print("RayCast colliding with:", $RayCast.get_collider().name)
 	# Do not process if in the editor
 	if Engine.is_editor_hint() or !is_inside_tree():
 		return

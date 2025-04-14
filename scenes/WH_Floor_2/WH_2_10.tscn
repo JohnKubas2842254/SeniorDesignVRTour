@@ -22,7 +22,7 @@ next_scene_path = "res://scenes/WH_Floor_2/WH_2_11.tscn"
 visible = false
 
 [node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
-next_scene_path = "res://scenes/WH_Floor_2/WH_2_11.tscn"
+next_scene_path = "res://scenes/WH_Floor_2/WH_2_14.tscn"
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_2/WH_2_9.tscn"

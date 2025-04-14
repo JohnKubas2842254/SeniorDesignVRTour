@@ -21,8 +21,11 @@ environment = SubResource("Environment_61d2k")
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_0/WH_0_6.tscn"
 
-[node name="right marker" parent="Node3D" index="7"]
-visible = true
+[node name="backwards marker" parent="Node3D" index="5"]
+visible = false
+
+[node name="forward marker" parent="Node3D" index="7"]
+visible = false
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_0/WH_0_4.tscn"
