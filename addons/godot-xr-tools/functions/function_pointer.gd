@@ -3,6 +3,8 @@
 class_name XRToolsFunctionPointer
 extends Node3D
 
+signal scene_transition_requested(target_object)
+
 # Variable to track if the hand is active
 var is_active: bool = true
 
@@ -188,6 +190,7 @@ func _process(_delta):
 	
 	if $RayCast.is_colliding():
 		print("RayCast colliding with:", $RayCast.get_collider().name)
+		
 	# Do not process if in the editor
 	if Engine.is_editor_hint() or !is_inside_tree():
 		return
@@ -425,10 +428,19 @@ func _update_pointer() -> void:
 # Pointer-activation button pressed handler
 func _button_pressed() -> void:
 	if $RayCast.is_colliding():
+		# Get the collider
+		var collider = $RayCast.get_collider()
+		
 		# Report pressed
-		target = $RayCast.get_collider()
+		target = collider
 		last_collided_at = $RayCast.get_collision_point()
 		XRToolsPointerEvent.pressed(self, target, last_collided_at)
+		
+		# Check if the collider is a scene transition marker and directly call the method
+		if collider is Area3D and collider.has_method("handle_scene_transition"):
+			collider.handle_scene_transition()
+			print("Transition requested to marker: ", collider.name)
+			print("Transition requested to marker: ", collider.name)
 
 
 # Pointer-activation button released handler

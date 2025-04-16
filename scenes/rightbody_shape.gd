@@ -7,6 +7,7 @@ var input_disabled: bool = false  # Declare the variable properly
 func _input_event(_camera, event, _position, _normal, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		handle_scene_transition()
+
 # NEW: Called when a laser pointer interacts with the marker
 func _on_marker_body_entered(body):
 	if body.name.contains("Pointer") and not input_disabled:
@@ -29,6 +30,11 @@ func handle_scene_transition():
 		if main_node and main_node.has_method("transition_to_scene"):
 			main_node.transition_to_scene(next_scene_path)
 		else:
-			print("Error: Main node or 'transition_to_scene' method not found!")
+			# Fallback direct scene change if main node not found
+			get_tree().change_scene_to_file(next_scene_path)
 	else:
 		print("Not a valid transition")
+
+# NEW: Called from signal when pointer trigger is pressed while pointing at this object
+func external_transition_trigger():
+	handle_scene_transition()

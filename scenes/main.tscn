@@ -59,7 +59,7 @@ light_energy = 2.0
 light_cull_mask = 4293918721
 omni_range = 7.20113
 
-[node name="left marker" type="MeshInstance3D" parent="Node3D"]
+[node name="left marker" type="MeshInstance3D" parent="Node3D" groups=["scene_transition_markers"]]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, -1, 4)
 material_override = SubResource("StandardMaterial3D_eb6dy")
 material_overlay = SubResource("StandardMaterial3D_uwml4")
@@ -79,7 +79,7 @@ light_energy = 2.0
 light_cull_mask = 4293918721
 omni_range = 7.20113
 
-[node name="backwards marker" type="MeshInstance3D" parent="Node3D"]
+[node name="backwards marker" type="MeshInstance3D" parent="Node3D" groups=["scene_transition_markers"]]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 4, -1, 0)
 material_override = SubResource("StandardMaterial3D_a8y0u")
 mesh = SubResource("CylinderMesh_ngnbe")
@@ -97,7 +97,7 @@ light_energy = 2.0
 light_cull_mask = 4293918721
 omni_range = 7.20113
 
-[node name="forward marker" type="MeshInstance3D" parent="Node3D"]
+[node name="forward marker" type="MeshInstance3D" parent="Node3D" groups=["scene_transition_markers"]]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -4, -1, 0)
 material_override = SubResource("StandardMaterial3D_jgcq5")
 mesh = SubResource("CylinderMesh_ngnbe")
@@ -115,7 +115,7 @@ light_energy = 2.0
 light_cull_mask = 4293918721
 omni_range = 7.20113
 
-[node name="right marker" type="MeshInstance3D" parent="Node3D"]
+[node name="right marker" type="MeshInstance3D" parent="Node3D" groups=["scene_transition_markers"]]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, -1, -4)
 material_override = SubResource("StandardMaterial3D_jkv2x")
 mesh = SubResource("CylinderMesh_ngnbe")
@@ -166,4 +166,3 @@ collision_mask = 16777214
 [connection signal="area_entered" from="Node3D/left marker/leftbodyShape" to="." method="_on_leftbody_shape_area_entered"]
 [connection signal="area_entered" from="Node3D/backwards marker/backwardBodyShape" to="." method="_on_backward_body_shape_area_entered"]
 [connection signal="area_entered" from="Node3D/forward marker/forwardbodyShape" to="." method="_on_forwardbody_shape_area_entered"]
-[connection signal="area_entered" from="Node3D/right marker/rightbodyShape" to="." method="_on_rightbody_shape_area_entered"]

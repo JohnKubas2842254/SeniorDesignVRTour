@@ -31,6 +31,13 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
 import/blender/enabled=false
 
+[input]
+
+trigger_click={
+"deadzone": 0.2,
+"events": []
+}
+
 [xr]
 
 openxr/enabled=true
