@@ -37,4 +37,4 @@ visible = false
 next_scene_path = "res://scenes/FH_Floor_2/FH_2_25.tscn"
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
-next_scene_path = "res://scenes/FH_Floor_3/FH_3_1.tscn"
+next_scene_path = "res://scenes/WH_Floor_3/WH_3_1.tscn"

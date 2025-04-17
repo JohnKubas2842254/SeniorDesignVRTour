@@ -18,18 +18,17 @@ sky = SubResource("Sky_mjmev")
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="Node3D" index="0"]
 environment = SubResource("Environment_h62kv")
 
-[node name="OmniLight3D" parent="Node3D" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78257, 0, 0)
-
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_0/WH_0_9.tscn"
 
 [node name="backwards marker" parent="Node3D" index="5"]
-visible = true
+visible = false
 
-[node name="right marker" parent="Node3D" index="7"]
+[node name="forward marker" parent="Node3D" index="7"]
+visible = false
+
+[node name="right marker" parent="Node3D" index="9"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -1, -1, -4)
-visible = true
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_0/WH_0_7.tscn"

@@ -21,7 +21,7 @@ visible = false
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/FH_Floor_1/FH_1_5.tscn"
 
-[node name="backwards marker" parent="Node3D" index="3"]
+[node name="backwards marker" parent="Node3D" index="4"]
 visible = false
 
 [node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdcg4mnic0odr"]
+[gd_scene load_steps=6 format=3 uid="uid://cnrejifaxkdde"]
 
 [ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_3ha6j"]
 [ext_resource type="Texture2D" uid="uid://dwtl8oter0vao" path="res://panoramics/FH_2/FH_2_1.jpg" id="2_w12ht"]
@@ -18,11 +18,17 @@ sky = SubResource("Sky_pcywf")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" index="0"]
 environment = SubResource("Environment_onv1o")
 
+[node name="Camera3D" parent="Node3D" index="1"]
+transform = Transform3D(-0.999943, 0, 0.0106463, 0, 1, 0, -0.0106463, 0, -0.999943, 0, 0, 0)
+
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/FH_Floor_2/FH_2_2.tscn"
 
 [node name="backwards marker" parent="Node3D" index="5"]
 visible = false
+
+[node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
+next_scene_path = "res://scenes/WH_Floor_2/WH_2_2.tscn"
 
 [node name="right marker" parent="Node3D" index="9"]
 visible = false

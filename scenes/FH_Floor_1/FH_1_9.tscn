@@ -16,15 +16,15 @@ sky = SubResource("Sky_pc0w5")
 [node name="main" instance=ExtResource("1_xmu0h")]
 
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
-next_scene_path = "res://scenes/FH_Floor_1/FH_1_5.tscn"
+next_scene_path = "res://scenes/FH_Floor_1/FH_1_10.tscn"
 
-[node name="backwards marker" parent="Node3D" index="3"]
+[node name="backwards marker" parent="Node3D" index="4"]
 visible = false
 
 [node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
 next_scene_path = "res://scenes/FH_Floor_1/FH_1_6.tscn"
 
-[node name="right marker" parent="Node3D" index="5"]
+[node name="right marker" parent="Node3D" index="8"]
 visible = false
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]

@@ -18,10 +18,10 @@ sky = SubResource("Sky_p47ax")
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_2/WH_2_3.tscn"
 
-[node name="backwards marker" parent="Node3D" index="3"]
+[node name="backwards marker" parent="Node3D" index="4"]
 visible = false
 
-[node name="forward marker" parent="Node3D" index="4"]
+[node name="forward marker" parent="Node3D" index="6"]
 visible = false
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
