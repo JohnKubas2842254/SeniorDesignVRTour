@@ -188,8 +188,8 @@ func _ready():
 # Called on each frame to update the pickup
 func _process(_delta):
 	
-	if $RayCast.is_colliding():
-		print("RayCast colliding with:", $RayCast.get_collider().name)
+	#if $RayCast.is_colliding():
+		#print("RayCast colliding with:", $RayCast.get_collider().name)
 		
 	# Do not process if in the editor
 	if Engine.is_editor_hint() or !is_inside_tree():

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dymumd1uxc6je"]
+[gd_scene load_steps=7 format=3 uid="uid://dymumd1uxc6je"]
 
 [ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_enfa5"]
 [ext_resource type="Texture2D" uid="uid://ccw8xbuchbd8n" path="res://panoramics/WH_0/IMG_20250219_113741_00_095.jpg" id="2_ixqtj"]
+[ext_resource type="Script" uid="uid://dp62ou2ysbn4v" path="res://scenes/WH_Floor_0/xr_camera_control.gd" id="3_bjfyv"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_572tr"]
 panorama = ExtResource("2_ixqtj")
@@ -29,3 +30,9 @@ visible = false
 
 [node name="right marker" parent="Node3D" index="9"]
 visible = false
+
+[node name="XRCamera3D" parent="XROrigin3D" index="0"]
+script = ExtResource("3_bjfyv")
+
+[node name="MovementTurn" parent="XROrigin3D/RightHandController" index="2"]
+smooth_turn_speed = 3.0

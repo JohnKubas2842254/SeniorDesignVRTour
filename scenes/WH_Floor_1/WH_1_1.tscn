@@ -29,3 +29,7 @@ visible = false
 
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource("Environment_fi2e1")
+
+[node name="XRCamera3D" parent="XROrigin3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+fov = 90.0

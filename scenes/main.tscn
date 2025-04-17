@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cjmpy544bpud3"]
+[gd_scene load_steps=26 format=3 uid="uid://cjmpy544bpud3"]
 
 [ext_resource type="Script" uid="uid://dw3wouqa6e7qu" path="res://main.gd" id="1_x2mhj"]
 [ext_resource type="Script" uid="uid://b2vy7ue4irybe" path="res://teleport_manger.gd" id="3_1vsxa"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://ckdcedgaggq40" path="res://scenes/forwardbody_shape.gd" id="7_8425o"]
 [ext_resource type="Script" uid="uid://t6hhimx3olmt" path="res://scenes/rightbody_shape.gd" id="8_5e4yq"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="8_60ubk"]
+[ext_resource type="Script" uid="uid://dsmxvmy4cqyd2" path="res://scenes/xr_origin_3d.gd" id="8_a8y0u"]
+[ext_resource type="Script" uid="uid://dnc0ad6m1bmes" path="res://scenes/xr_camera_3d.gd" id="8_trceg"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="9_kc5jf"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="10_phrlt"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="11_h77gc"]
@@ -129,10 +131,12 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)
 shape = SubResource("CylinderShape3D_0ouji")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
+script = ExtResource("8_a8y0u")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 environment = SubResource("Environment_il6cg")
 fov = 120.1
+script = ExtResource("8_trceg")
 
 [node name="LeftHandController" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
