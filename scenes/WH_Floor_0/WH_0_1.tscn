@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dymumd1uxc6je"]
+[gd_scene load_steps=12 format=3 uid="uid://dymumd1uxc6je"]
 
 [ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_enfa5"]
 [ext_resource type="Texture2D" uid="uid://ccw8xbuchbd8n" path="res://panoramics/WH_0/IMG_20250219_113741_00_095.jpg" id="2_ixqtj"]
 [ext_resource type="Script" uid="uid://dp62ou2ysbn4v" path="res://scenes/WH_Floor_0/xr_camera_control.gd" id="3_bjfyv"]
+[ext_resource type="Script" uid="uid://c4a6j7h5kjr7p" path="res://scenes/WH_Floor_0/info_body_shape.gd" id="3_m232r"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_572tr"]
 panorama = ExtResource("2_ixqtj")
@@ -13,6 +14,18 @@ sky_material = SubResource("PanoramaSkyMaterial_572tr")
 [sub_resource type="Environment" id="Environment_onv1o"]
 background_mode = 2
 sky = SubResource("Sky_pcywf")
+
+[sub_resource type="SphereMesh" id="SphereMesh_gtsoy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_884t1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m232r"]
+albedo_color = Color(0, 0, 0, 1)
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_m232r"]
+material = SubResource("StandardMaterial3D_m232r")
+size = Vector2(2, 1.5)
 
 [node name="main" instance=ExtResource("1_enfa5")]
 
@@ -26,10 +39,37 @@ next_scene_path = "res://scenes/WH_Floor_0/WH_0_2.tscn"
 visible = false
 
 [node name="forward marker" parent="Node3D" index="7"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -3.99372, -1, 0)
 visible = false
 
 [node name="right marker" parent="Node3D" index="9"]
 visible = false
+
+[node name="Info Hotspot" type="MeshInstance3D" parent="Node3D" index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17163, -0.962714, 0)
+mesh = SubResource("SphereMesh_gtsoy")
+
+[node name="InfoBodyShape" type="Area3D" parent="Node3D/Info Hotspot" index="0" node_paths=PackedStringArray("info_panel")]
+script = ExtResource("3_m232r")
+info_panel = NodePath("../InfoPanel")
+
+[node name="InfoCollisionShape" type="CollisionShape3D" parent="Node3D/Info Hotspot/InfoBodyShape" index="0"]
+shape = SubResource("SphereShape3D_884t1")
+
+[node name="InfoPanel" type="Node3D" parent="Node3D/Info Hotspot" index="1"]
+
+[node name="Background" type="MeshInstance3D" parent="Node3D/Info Hotspot/InfoPanel" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+mesh = SubResource("QuadMesh_m232r")
+
+[node name="Label3D" type="Label3D" parent="Node3D/Info Hotspot/InfoPanel" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.05)
+billboard = 2
+text = "Dan T. Moore Makerspace
+
+"
+font_size = 24
+autowrap_mode = 2
 
 [node name="XRCamera3D" parent="XROrigin3D" index="0"]
 script = ExtResource("3_bjfyv")

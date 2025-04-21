@@ -426,6 +426,9 @@ func _update_pointer() -> void:
 
 
 # Pointer-activation button pressed handler
+# Pointer-activation button pressed handler
+# Pointer-activation button pressed handler
+# Pointer-activation button pressed handler
 func _button_pressed() -> void:
 	if $RayCast.is_colliding():
 		# Get the collider
@@ -436,11 +439,15 @@ func _button_pressed() -> void:
 		last_collided_at = $RayCast.get_collision_point()
 		XRToolsPointerEvent.pressed(self, target, last_collided_at)
 		
-		# Check if the collider is a scene transition marker and directly call the method
+		# Check if the collider is a scene transition marker
 		if collider is Area3D and collider.has_method("handle_scene_transition"):
 			collider.handle_scene_transition()
 			print("Transition requested to marker: ", collider.name)
-			print("Transition requested to marker: ", collider.name)
+			
+		# NEW CODE: Check if the collider is an information hotspot
+		elif collider is Area3D and collider.has_method("display_information"):
+			collider.display_information()
+			print("Information display requested from: ", collider.name)
 
 
 # Pointer-activation button released handler
