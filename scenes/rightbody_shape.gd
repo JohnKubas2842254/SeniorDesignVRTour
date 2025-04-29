@@ -1,25 +1,14 @@
-extends "res://marker_hover.gd"
+extends Area3D
 
-@export var next_scene_path: String
-var input_disabled: bool = false
-
-func _ready():
-	super._ready()  # Call the parent _ready function
-
-func _on_area_entered(area):
-	if area.name == "PlayerBody" or area.name == "FunctionPointer":
-		transition_to_scene()
-	
-func transition_to_scene():
-	if next_scene_path:
-		get_tree().change_scene_to_file(next_scene_path)
+@export var next_scene_path: String  # Set in Inspector, theres an empty "next scene field" to be filled
+var input_disabled: bool = false  # Declare the variable properly
 
 # Called when the player clicks on the marker
 func _input_event(_camera, event, _position, _normal, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		handle_scene_transition()
 
-# Called when a laser pointer interacts with the marker
+# NEW: Called when a laser pointer interacts with the marker
 func _on_marker_body_entered(body):
 	if body.name.contains("Pointer") and not input_disabled:
 		input_disabled = true  # Block further input to prevent multiple triggers
@@ -46,6 +35,6 @@ func handle_scene_transition():
 	else:
 		print("Not a valid transition")
 
-# Called from signal when pointer trigger is pressed while pointing at this object
+# NEW: Called from signal when pointer trigger is pressed while pointing at this object
 func external_transition_trigger():
 	handle_scene_transition()

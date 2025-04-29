@@ -18,12 +18,12 @@ sky = SubResource("Sky_mjmev")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_av1pm"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1f8fk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m232r"]
 albedo_color = Color(0, 0, 0, 1)
 billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_xfx87"]
-material = SubResource("StandardMaterial3D_1f8fk")
+material = SubResource("StandardMaterial3D_m232r")
 size = Vector2(2.7, 2.2)
 
 [node name="main" instance=ExtResource("1_m0gr2")]
