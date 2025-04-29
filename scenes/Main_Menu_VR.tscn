@@ -1,0 +1,113 @@
+[gd_scene load_steps=12 format=3 uid="uid://dtkct2rs1prhf"]
+
+[ext_resource type="Script" path="res://scenes/main_menu_vr.gd" id="1_cnvk1"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="2_8v6k3"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_g3a88"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_8vv6m"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="5_mbdhj"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="6_6iirn"]
+[ext_resource type="PackedScene" uid="uid://bkgw2lscy0ukr" path="res://MainMenu.tscn" id="7_5d7e4"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="8_qykkm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yc4pv"]
+sky_top_color = Color(0.309804, 0.662745, 0.827451, 1)
+sky_horizon_color = Color(0.603922, 0.788235, 0.945098, 1)
+ground_bottom_color = Color(0.0980392, 0.27451, 0.141176, 1)
+ground_horizon_color = Color(0.262745, 0.52549, 0.309804, 1)
+
+[sub_resource type="Sky" id="Sky_l8n8b"]
+sky_material = SubResource("ProceduralSkyMaterial_yc4pv")
+
+[sub_resource type="Environment" id="Environment_v2gpp"]
+background_mode = 2
+sky = SubResource("Sky_l8n8b")
+ambient_light_source = 3
+ambient_light_color = Color(0.545098, 0.545098, 0.545098, 1)
+tonemap_mode = 3
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.756863, 0.85098, 0.909804, 1)
+fog_density = 0.005
+
+[node name="VRMenuRoom" type="Node3D"]
+script = ExtResource("1_cnvk1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v2gpp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 0, 10, 0)
+shadow_enabled = true
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+current = true
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+current = true
+
+[node name="LeftHandController" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"left_hand"
+pose = &"aim"
+
+[node name="LeftHand" parent="XROrigin3D/LeftHandController" instance=ExtResource("2_8v6k3")]
+
+[node name="FunctionTeleport" parent="XROrigin3D/LeftHandController" instance=ExtResource("5_mbdhj")]
+
+[node name="FunctionPointer" parent="XROrigin3D/LeftHandController" instance=ExtResource("8_qykkm")]
+show_laser = 2
+laser_length = 1
+
+[node name="RightHandController" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+tracker = &"right_hand"
+pose = &"aim"
+
+[node name="RightHand" parent="XROrigin3D/RightHandController" instance=ExtResource("3_g3a88")]
+
+[node name="FunctionPointer" parent="XROrigin3D/RightHandController" instance=ExtResource("8_qykkm")]
+show_laser = 2
+laser_length = 1
+
+[node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("4_8vv6m")]
+
+[node name="MenuViewport" parent="." instance=ExtResource("6_6iirn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, -2)
+collision_layer = 1048576
+scene = ExtResource("7_5d7e4")
+viewport_size = Vector2(1000, 600)
+transparent = 0
+unshaded = true
+scene_properties_keys = PackedStringArray("main_menu.gd")
+
+[node name="Room" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(20, 0.2, 20)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -10)
+use_collision = true
+size = Vector3(20, 10, 0.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 10)
+use_collision = true
+size = Vector3(20, 10, 0.5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, 0)
+use_collision = true
+size = Vector3(0.5, 10, 20)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 0)
+use_collision = true
+size = Vector3(0.5, 10, 20)

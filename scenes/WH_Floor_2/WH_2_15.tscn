@@ -1,7 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://qdwjgqvexpvv"]
+[gd_scene load_steps=11 format=3 uid="uid://qdwjgqvexpvv"]
 
 [ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_wmlgj"]
+[ext_resource type="Script" uid="uid://c4a6j7h5kjr7p" path="res://scenes/WH_Floor_0/info_body_shape.gd" id="2_6282e"]
 [ext_resource type="Texture2D" uid="uid://bhn5dl8nameyt" path="res://panoramics/WH_2/WH_2_15.jpg" id="2_bf57o"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dib3h"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d5kr5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6282e"]
+albedo_color = Color(0, 0, 0, 1)
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_jhots"]
+material = SubResource("StandardMaterial3D_6282e")
+size = Vector2(2.7, 2.2)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0rdip"]
 panorama = ExtResource("2_bf57o")
@@ -15,9 +28,6 @@ sky = SubResource("Sky_p47ax")
 
 [node name="main" instance=ExtResource("1_wmlgj")]
 
-[node name="OmniLight3D" parent="Node3D" index="0"]
-visible = true
-
 [node name="left marker" parent="Node3D" index="2"]
 visible = false
 
@@ -30,11 +40,35 @@ next_scene_path = "res://scenes/WH_Floor_2/WH_2_14.tscn"
 [node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_2/WH_2_16.tscn"
 
-[node name="right marker" parent="Node3D" index="5"]
+[node name="right marker" parent="Node3D" index="8"]
 visible = false
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_2/WH_2_9.tscn"
+
+[node name="Info Hotspot" type="MeshInstance3D" parent="Node3D" index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91663, -0.962714, -3.0547)
+mesh = SubResource("SphereMesh_dib3h")
+
+[node name="InfoBodyShape" type="Area3D" parent="Node3D/Info Hotspot" index="0" node_paths=PackedStringArray("info_panel")]
+script = ExtResource("2_6282e")
+info_panel = NodePath("../InfoPanel")
+
+[node name="InfoCollisionShape" type="CollisionShape3D" parent="Node3D/Info Hotspot/InfoBodyShape" index="0"]
+shape = SubResource("SphereShape3D_d5kr5")
+
+[node name="InfoPanel" type="Node3D" parent="Node3D/Info Hotspot" index="1"]
+
+[node name="Background" type="MeshInstance3D" parent="Node3D/Info Hotspot/InfoPanel" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+mesh = SubResource("QuadMesh_jhots")
+
+[node name="Label3D" type="Label3D" parent="Node3D/Info Hotspot/InfoPanel" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.0270331)
+billboard = 2
+text = "Campus offers plenty of different vending machines for both snacks and drinks so students can have energy all throughout their day."
+font_size = 24
+autowrap_mode = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource("Environment_st023")

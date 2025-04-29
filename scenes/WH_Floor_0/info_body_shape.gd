@@ -15,6 +15,11 @@ func _input_event(_camera, event, _position, _normal, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		display_information()
 
+# Handle VR laser pointer events
+func pointer_event(event: XRToolsPointerEvent) -> void:
+	if event.event_type == XRToolsPointerEvent.Type.PRESSED:
+		display_information()
+
 # This is the method that will be called by the VR pointer
 func display_information():
 	if input_disabled:

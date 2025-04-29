@@ -18,13 +18,13 @@ sky = SubResource("Sky_gyl84")
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_1/WH_1_24.tscn"
 
-[node name="backwards marker" parent="Node3D" index="3"]
+[node name="backwards marker" parent="Node3D" index="4"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 4, -2.0996, 0)
 
 [node name="backwardBodyShape" parent="Node3D/backwards marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_0/WH_0_9.tscn"
 
-[node name="forward marker" parent="Node3D" index="4"]
+[node name="forward marker" parent="Node3D" index="6"]
 visible = false
 
 [node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
