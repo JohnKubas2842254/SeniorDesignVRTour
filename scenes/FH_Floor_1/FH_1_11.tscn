@@ -1,7 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cstjjhkwrmpg"]
+[gd_scene load_steps=11 format=3 uid="uid://cstjjhkwrmpg"]
 
 [ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_5b5mg"]
 [ext_resource type="Texture2D" uid="uid://7b1y67g648mv" path="res://panoramics/FH_1/FH_1_11.jpg" id="2_5b5mg"]
+[ext_resource type="Script" uid="uid://c4a6j7h5kjr7p" path="res://scenes/WH_Floor_0/info_body_shape.gd" id="2_nkcny"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_nkcny"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7v3iw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m232r"]
+albedo_color = Color(0, 0, 0, 1)
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_vxu1j"]
+material = SubResource("StandardMaterial3D_m232r")
+size = Vector2(2.7, 2.2)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jgutg"]
 panorama = ExtResource("2_5b5mg")
@@ -18,14 +31,38 @@ sky = SubResource("Sky_pc0w5")
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/FH_Floor_1/FH_1_12.tscn"
 
-[node name="backwards marker" parent="Node3D" index="3"]
+[node name="backwards marker" parent="Node3D" index="4"]
 visible = false
 
-[node name="forward marker" parent="Node3D" index="4"]
+[node name="forward marker" parent="Node3D" index="6"]
 visible = false
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
 next_scene_path = "res://scenes/FH_Floor_1/FH_1_10.tscn"
+
+[node name="Info Hotspot" type="MeshInstance3D" parent="Node3D" index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09205, -0.962714, -1.35246)
+mesh = SubResource("SphereMesh_nkcny")
+
+[node name="InfoBodyShape" type="Area3D" parent="Node3D/Info Hotspot" index="0" node_paths=PackedStringArray("info_panel")]
+script = ExtResource("2_nkcny")
+info_panel = NodePath("../InfoPanel")
+
+[node name="InfoCollisionShape" type="CollisionShape3D" parent="Node3D/Info Hotspot/InfoBodyShape" index="0"]
+shape = SubResource("SphereShape3D_7v3iw")
+
+[node name="InfoPanel" type="Node3D" parent="Node3D/Info Hotspot" index="1"]
+
+[node name="Background" type="MeshInstance3D" parent="Node3D/Info Hotspot/InfoPanel" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+mesh = SubResource("QuadMesh_vxu1j")
+
+[node name="Label3D" type="Label3D" parent="Node3D/Info Hotspot/InfoPanel" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.0270331)
+billboard = 2
+text = "One of the oldest buildings on campus, Fenn Hall blends tradition with technology. It houses engineering labs, faculty offices, and spaces where students build foundational skills for their careers."
+font_size = 24
+autowrap_mode = 2
 
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource("Environment_fi2e1")

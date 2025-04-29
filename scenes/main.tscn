@@ -88,6 +88,7 @@ mesh = SubResource("CylinderMesh_ngnbe")
 
 [node name="backwardBodyShape" type="Area3D" parent="Node3D/backwards marker"]
 script = ExtResource("6_rivjo")
+next_scene_path = null
 
 [node name="backwardCollisionShape" type="CollisionShape3D" parent="Node3D/backwards marker/backwardBodyShape"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)
@@ -106,6 +107,7 @@ mesh = SubResource("CylinderMesh_ngnbe")
 
 [node name="forwardbodyShape" type="Area3D" parent="Node3D/forward marker"]
 script = ExtResource("7_8425o")
+next_scene_path = null
 
 [node name="forwardCollisionShape" type="CollisionShape3D" parent="Node3D/forward marker/forwardbodyShape"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1, 0)

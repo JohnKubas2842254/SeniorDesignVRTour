@@ -13,16 +13,22 @@ sky_material = SubResource("PanoramaSkyMaterial_jgutg")
 background_mode = 2
 sky = SubResource("Sky_pc0w5")
 
-[node name="main" instance=ExtResource("1_0fr4k")]
+[node name="main2" instance=ExtResource("1_0fr4k")]
 
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/FH_Floor_1/FH_1_11.tscn"
 
-[node name="backwards marker" parent="Node3D" index="3"]
+[node name="backwards marker" parent="Node3D" index="4"]
 visible = false
 
-[node name="forward marker" parent="Node3D" index="4"]
+[node name="backwardBodyShape" parent="Node3D/backwards marker" index="0"]
+next_scene_path = null
+
+[node name="forward marker" parent="Node3D" index="6"]
 visible = false
+
+[node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
+next_scene_path = null
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
 next_scene_path = "res://scenes/FH_Floor_1/FH_1_9.tscn"
