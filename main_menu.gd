@@ -56,4 +56,4 @@ func _on_Button_pressed():
 	get_tree().change_scene_to_file("res://scenes/WH_Floor_1/WH_1_1.tscn")
 
 func _on_Button2_pressed():
-	get_tree().change_scene_to_file("res://scenes/WH_Floor_0/WH_0_8.tscn")
+	get_tree().change_scene_to_file("res://scenes/FH_Floor_1/FH_1_11.tscn")
