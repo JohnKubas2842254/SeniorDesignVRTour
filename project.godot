@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SeniorDesignCampusVrTour"
-run/main_scene="res://MainMenu.tscn"
+run/main_scene="res://scenes/InitialScene.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,14 @@ CameraState="*res://camera_state.gd"
 VrState="*res://vr_state.gd"
 Global="*res://Global.gd"
 XrCameraState="*res://xr_camera_state.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/aspect="keep_height"
+#Fullscreenmodewindow/stretch/mode="canvas_items"
 
 [editor_plugins]
 
@@ -43,10 +51,3 @@ trigger_click={
 
 openxr/enabled=true
 shaders/enabled=true
-
-[display]
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=3  # Fullscreen mode
-window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_height"
