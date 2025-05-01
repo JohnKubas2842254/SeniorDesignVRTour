@@ -1,18 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://qdwjgqvexpvv"]
+[gd_scene load_steps=13 format=3 uid="uid://bjp6brvon52it"]
 
 [ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_wmlgj"]
 [ext_resource type="Script" uid="uid://c4a6j7h5kjr7p" path="res://scenes/WH_Floor_0/info_body_shape.gd" id="2_6282e"]
 [ext_resource type="Texture2D" uid="uid://bhn5dl8nameyt" path="res://panoramics/WH_2/WH_2_15.jpg" id="2_bf57o"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_d5kr5"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_jhots"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_dib3h"]
+[sub_resource type="SphereMesh" id="SphereMesh_vhnxh"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_d5kr5"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_k0gcl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6282e"]
 albedo_color = Color(0, 0, 0, 1)
 billboard_mode = 2
 
-[sub_resource type="QuadMesh" id="QuadMesh_jhots"]
+[sub_resource type="QuadMesh" id="QuadMesh_acfpc"]
 material = SubResource("StandardMaterial3D_6282e")
 size = Vector2(2.7, 2.2)
 
@@ -34,6 +36,9 @@ visible = false
 [node name="leftbodyShape" parent="Node3D/left marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_2/WH_2_11.tscn"
 
+[node name="backwards marker" parent="Node3D" index="4"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 2.79875, -1, 0)
+
 [node name="backwardBodyShape" parent="Node3D/backwards marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_2/WH_2_14.tscn"
 
@@ -48,20 +53,20 @@ next_scene_path = "res://scenes/WH_Floor_2/WH_2_9.tscn"
 
 [node name="Info Hotspot" type="MeshInstance3D" parent="Node3D" index="9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91663, -0.962714, -3.0547)
-mesh = SubResource("SphereMesh_dib3h")
+mesh = SubResource("SphereMesh_vhnxh")
 
 [node name="InfoBodyShape" type="Area3D" parent="Node3D/Info Hotspot" index="0" node_paths=PackedStringArray("info_panel")]
 script = ExtResource("2_6282e")
 info_panel = NodePath("../InfoPanel")
 
 [node name="InfoCollisionShape" type="CollisionShape3D" parent="Node3D/Info Hotspot/InfoBodyShape" index="0"]
-shape = SubResource("SphereShape3D_d5kr5")
+shape = SubResource("SphereShape3D_k0gcl")
 
 [node name="InfoPanel" type="Node3D" parent="Node3D/Info Hotspot" index="1"]
 
 [node name="Background" type="MeshInstance3D" parent="Node3D/Info Hotspot/InfoPanel" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-mesh = SubResource("QuadMesh_jhots")
+mesh = SubResource("QuadMesh_acfpc")
 
 [node name="Label3D" type="Label3D" parent="Node3D/Info Hotspot/InfoPanel" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.0270331)
@@ -73,8 +78,7 @@ autowrap_mode = 2
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource("Environment_st023")
 
-[node name="XRCamera3D" parent="XROrigin3D" index="0"]
-fov = 179.0
+[node name="MovementTurn2" parent="XROrigin3D/RightHandController" index="1" instance=ExtResource("4_d5kr5")]
+turn_mode = 2
 
-[node name="PlayerBody" parent="XROrigin3D" index="3"]
-enabled = false
+[node name="PlayerBody2" parent="XROrigin3D" index="3" instance=ExtResource("5_jhots")]

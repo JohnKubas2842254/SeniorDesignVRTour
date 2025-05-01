@@ -24,13 +24,13 @@ next_scene_path = "res://scenes/WH_Floor_2/WH_2_11.tscn"
 [node name="backwardBodyShape" parent="Node3D/backwards marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_2/WH_2_17.tscn"
 
-[node name="forward marker" parent="Node3D" index="4"]
+[node name="forward marker" parent="Node3D" index="6"]
 visible = false
 
 [node name="forwardbodyShape" parent="Node3D/forward marker" index="0"]
 next_scene_path = "res://scenes/WH_Floor_2/WH_2_18.tscn"
 
-[node name="right marker" parent="Node3D" index="5"]
+[node name="right marker" parent="Node3D" index="8"]
 visible = false
 
 [node name="rightbodyShape" parent="Node3D/right marker" index="0"]
