@@ -1,10 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjp6brvon52it"]
+[gd_scene load_steps=11 format=3 uid="uid://bjp6brvon52it"]
 
 [ext_resource type="PackedScene" uid="uid://cjmpy544bpud3" path="res://scenes/main.tscn" id="1_wmlgj"]
 [ext_resource type="Script" uid="uid://c4a6j7h5kjr7p" path="res://scenes/WH_Floor_0/info_body_shape.gd" id="2_6282e"]
 [ext_resource type="Texture2D" uid="uid://bhn5dl8nameyt" path="res://panoramics/WH_2/WH_2_15.jpg" id="2_bf57o"]
-[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_d5kr5"]
-[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_jhots"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_vhnxh"]
 
@@ -77,8 +75,3 @@ autowrap_mode = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource("Environment_st023")
-
-[node name="MovementTurn2" parent="XROrigin3D/RightHandController" index="1" instance=ExtResource("4_d5kr5")]
-turn_mode = 2
-
-[node name="PlayerBody2" parent="XROrigin3D" index="3" instance=ExtResource("5_jhots")]
