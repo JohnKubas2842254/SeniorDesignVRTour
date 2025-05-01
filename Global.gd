@@ -50,10 +50,10 @@ func pre_hide_xr_nodes():
 		var left_FP = main.get_node_or_null("XROrigin3D/LeftHandController/FunctionPointer")
 		var right_FP = main.get_node_or_null("XROrigin3D/RightHandController/FunctionPointer")
 		if left_hand:
-			left_hand.visible = false
+			left_hand.visible = true
 		if right_hand:
-			right_hand.visible = false
+			right_hand.visible = true
 		if right_FP:
-			right_FP.visible = false
+			right_FP.visible = true
 		if left_FP:
-			left_FP.visible = false
+			left_FP.visible = true
